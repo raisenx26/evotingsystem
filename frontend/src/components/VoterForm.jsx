@@ -87,7 +87,7 @@ const VoterForm = ({ voters, setVoters, editingVoter, setEditingVoter }) => {
       />
 
       <button type="submit" className="w-full bg-[#1C352D] text-white p-2 rounded">
-        {editingVoter ? 'Update Voter' : 'Add New Voter'}
+        {editingVoter ? 'Update Voter' : 'Add Voter'}
       </button>
     </form>
   );
