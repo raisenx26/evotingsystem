@@ -22,7 +22,7 @@ router.post('/', protect, addVoter);
 router.put('/:id', protect, updateVoter);
 
 // DELETE a voter
-// Only admins can delete
 router.delete('/:id', protect, deleteVoter);
 
+// Export the router
 module.exports = router;
