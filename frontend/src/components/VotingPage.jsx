@@ -16,6 +16,7 @@ export default function VotingPage() {
 
   const handleSubmit = () => {
     if (selectedCandidate === null) {
+
       alert("Please select a candidate before submitting!");
       return;
     }
@@ -34,8 +35,9 @@ export default function VotingPage() {
             <thead className="bg-gray-50">
               <tr>
                 <th className="p-3 border-b text-left">#</th>
-                <th className="p-3 border-b text-left">Candidate Name</th>
-                <th className="p-3 border-b text-left">Party</th>
+                <th className="p-3 border-b text-left">Candidate</th>
+                <th className="p-3 border-b text-left">Party List</th>
+
                 <th className="p-3 border-b text-left">Select</th>
               </tr>
             </thead>
