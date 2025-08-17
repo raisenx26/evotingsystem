@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 
 const initialResults = [
-  { id: 1, name: "Jose Protacio Mercado Rizal y Alonso Realonda", party: "Unity Party", votes: 126 },
-  { id: 2, name: "Francisco Balagtas Baltazar", party: "Liberal Party", votes: 121 },
-  { id: 3, name: "Tandang Sora Martires", party: "Independent", votes: 133 },
+
+  { id: 1, name: "Jose Protacio Mercado Rizal y Alonso Realonda", party: "Unity Party", votes: 106 },
+  { id: 2, name: "Francisco Baltazar", party: "Liberal Party", votes: 101 },
+  { id: 3, name: "Tandang Sora", party: "Independent", votes: 93 },
+
 ];
 
 export default function OfficialResults() {
@@ -15,7 +17,9 @@ export default function OfficialResults() {
     <div className="min-h-screen bg-gray-100 p-6">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-3xl font-bold mb-6 text-center">
-          Partial and Unofficial Results
+
+          Partial Official Results
+
         </h1>
         <p class="text-center mb-3">As of 17 August of 2025</p>
 
