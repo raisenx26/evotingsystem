@@ -1,70 +1,123 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Assessment 1 (Total Marks **20**)**
 
-## Available Scripts
+**E-Voting System**
 
-In the project directory, you can run:
+**Objective**
+The E-Voting System is a secure and user-friendly platform that allows voters to register, authenticate, and cast their votes online. The system ensures transparency, prevents double voting, and provides real-time vote tallying with an admin dashboard for monitoring results.
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**Requirement**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**1. JIRA Board URL**
+https://connect-team-i2w4l2xp.atlassian.net/jira/software/projects/EVS/boards/34?atlOrigin=eyJpIjoiNjRhYzc4ZGEzYmRkNDYxZGE5Y2MyMjE3ZDgxNDc4MTAiLCJwIjoiaiJ9
 
-### `npm test`
+Boards:
+*Backlog: Feature requests & tasks
+*In Progress: Currently active work
+*Done: Completed features & fixes
+Workflow:
+*Epic → Story → Sub-task
+*Sprint planning & burndown tracking
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+**2. Backend Development (Node.js + Express + MongoDB)**
+Stack: Node.js, Express.js, MongoDB
+Steps to setup:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Clone repo
+git clone https://github.com/raisenx26/evotingsystem.git
+cd e-voting-system/backend
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Install dependencies
+npm install
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Setup environment
+cp .env.example .env
+# Add MongoDB URI, JWT_SECRET, and PORT
 
-### `npm run eject`
+# Run server
+npm start
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+backend/
+ ├── config/
+ ├── controllers/
+ ├── models/
+ ├── routes/
+ ├── middleware/
+ └── server.js
+ **3.Frontend Development (React.js)**
+Stack: React.js, Axios, React Router, TailwindCSS
+Setup:
+cd ../frontend
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Install dependencies
+npm install
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Start development server
+npm start
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Features:
+*Voter registration & login
+*Role-based dashboard (Admin / Voter)
+*Candidate list & voting page
+*Result display page
 
-## Learn More
+**4. Authentication & Authorization**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Authentication:
+  *JSON Web Token (JWT)-based auth 
+  *Passwords encrypted with bcrypt
+Authorization:
+-Role-based access control
+  *Admin: Manage candidates, view voter list, monitor results
+  *Voter: Cast a single vote
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**5. GitHub Version Control & Branching Strategy**
 
-### Code Splitting
+Main Branches:
+  *main → stable production code
+  *develop → active development
+Feature Branching:
+  *feature/feature-name
+  *bugfix/bug-name
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Workflow:
+  *Create feature branch from develop
+  *Commit & push changes
+  *Open Pull Request → review → merge to develop
+  *Periodic merge from develop → main
 
-### Analyzing the Bundle Size
+**7. CI/CD Pipeline Setup**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Tools: GitHub Actions / Jenkins
+Pipeline Stages:
+  *Build → install dependencies & compile code
+  *Test → run unit/integration tests
+  *Deploy → auto-deploy to AWS instance
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+**8. MongoDB**
 
-### Advanced Configuration
+Database: MongoDB Atlas (cloud) or local MongoDB instance
+Collections:
+*users → voter/admin info
+*candidates → candidate details
+*votes → encrypted vote records
+Security:
+*Enforce unique voter IDs
+*One-vote-per-user constraint
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+**8. AWS Instance**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Instance Link: https://ap-southeast-2.console.aws.amazon.com/ec2/home?region=ap-southeast-2#InstanceDetails:instanceId=i-0bb2b2a9c04b801bf
 
-### `npm run build` fails to minify
+Deployment:
+*Backend: Deployed on EC2 instance with Node.js & PM2
+*Frontend: Deployed via S3 + CloudFront (or EC2 with Nginx)
+*Database: MongoDB Atlas (recommended) or self-hosted on EC2
+Scaling:
+*Use Load Balancer & Auto Scaling Groups
+*Enable HTTPS via AWS Certificate Manager
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
