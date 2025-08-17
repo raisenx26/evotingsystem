@@ -13,8 +13,6 @@ const getVoters = async (req, res) => {
   }
 };
 
-// ADD voter
-// Any authenticated user can add themselves
 const addVoter = async (req, res) => {
   const { name, email, address, dob } = req.body;
   try {
@@ -31,8 +29,6 @@ const addVoter = async (req, res) => {
   }
 };
 
-// UPDATE voter
-// Admins: update any voter, Voters: only their own record
 const updateVoter = async (req, res) => {
   const { name, email, address, dob } = req.body;
 
@@ -58,8 +54,6 @@ const updateVoter = async (req, res) => {
   }
 };
 
-// DELETE voter
-// Only admins can delete
 const deleteVoter = async (req, res) => {
   try {
     const voter = await Voter.findById(req.params.id);
