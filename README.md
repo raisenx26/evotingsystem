@@ -90,33 +90,32 @@ Workflow:
 
 **7. CI/CD Pipeline Setup**
 
-Tools: GitHub Actions / Jenkins
-Pipeline Stages:
-  *Build → install dependencies & compile code
-  *Test → run unit/integration tests
-  *Deploy → auto-deploy to AWS instance
+* Implement a CI/CD pipeline using GitHub Actions to:
+* Automatically run tests on every commit/pull request (Optional).
+* Deploy the backend to AWS. (Use the QUT provided EC2 instance)
+* Deploy the frontend to AWS.
+* Document your CI/CD workflow in the README.
 
+---
 
-**8. MongoDB**
+**Submission Requirements**
 
-Database: MongoDB Atlas (cloud) or local MongoDB instance
-Collections:
-*users → voter/admin info
-*candidates → candidate details
-*votes → encrypted vote records
-Security:
-*Enforce unique voter IDs
-*One-vote-per-user constraint
+**A report **contains** the following (Provide screenshots as evidence for each implemented task. **The screenshot should **contain** your username** from JIRA, GITHUB, and AWS**):
 
+* **JIRA Project **Management**(Provide screenshots in the **report o**f at least two epics**, **including user story, sub**t**a**sks**. **Please **don’t** provide **the **U**ser Authentication** epic**.**Provide your JIRA Board URL in the report and README file as well.**Through the JIRA Board, we will systematically review the completeness of the project features, organised under Epics, User Stories, and Sub-tasks.**
+* Requirement diagram, Block Definition Diagram (BDD), Parametric Diagram (Using project features).
+* **GitHub Repository (backend/ and frontend/)** link. We will **review** your code implementation, which you followed from the task description. We will also **review** your commits, main branch, feature branches, and pull requests. **(**Please note that the authorisation** (Log In, Registration)** is the prerequisite for backend development.**)**
+* CI/CD pipeline details step by step screenshot.
+* README.md with:
+* Project setup instructions.
+* Public URL of your project.
+* Provide a project-specific username and password if we need to access your dashboard.
 
-**8. AWS Instance**
+---
 
-Instance Link: https://ap-southeast-2.console.aws.amazon.com/ec2/home?region=ap-southeast-2#InstanceDetails:instanceId=i-0bb2b2a9c04b801bf
+**Assessment Criteria:**
 
-Deployment:
-*Backend: Deployed on EC2 instance with Node.js & PM2
-*Frontend: Deployed via S3 + CloudFront (or EC2 with Nginx)
-*Database: MongoDB Atlas (recommended) or self-hosted on EC2
-Scaling:
-*Use Load Balancer & Auto Scaling Groups
-*Enable HTTPS via AWS Certificate Manager
+* Clarity and completeness of Jira board and SysML models.
+* Adherence to Git best practices and practical contributions.
+* Successful implementation, deploymentand CI/CD pipeline.
+* Problem-solving skills and the ability to go beyond basic requirements.
