@@ -21,7 +21,4 @@ function authRole(role) {
 
 } 
 
-module.exports = {
-    authUser,
-    authRole
-}
+module.exports = { authUser, authRole}
