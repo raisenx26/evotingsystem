@@ -29,7 +29,6 @@ const addVoter = async (req, res) => {
   }
 };
 
-
 const updateVoter = async (req, res) => {
   const { name, email, address, dob } = req.body;
 
