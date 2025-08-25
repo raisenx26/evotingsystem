@@ -3,6 +3,7 @@ import { Navigate } from 'react-router-dom';
 import axiosInstance from '../axiosConfig';
 import VoterForm from '../components/VoterForm';
 import VoterList from '../components/VoterList';
+import VotingPage from '../components/VotingPage';
 import { useAuth } from '../context/AuthContext';
 
 const Voters = () => {
@@ -46,6 +47,10 @@ const Voters = () => {
 
   return (
     <div className="container mx-auto p-6">
+
+    {/* Show VoterForm ONLY if admin */}
+    {!isVoter && (
+
       <VoterForm
         voters={voters}
         setVoters={setVoters}           
@@ -54,8 +59,12 @@ const Voters = () => {
         isVoter={isVoter}
         user={user}                        
       />
+    )}
 
-      {}
+    {/* If voter -> show VotingPage */}
+    {isVoter && <VotingPage user={user} />}
+
+    {/* If admin -> show VoterList */}
       {!isVoter && (
         <VoterList
           voters={voters}
