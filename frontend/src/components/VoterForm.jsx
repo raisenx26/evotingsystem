@@ -9,13 +9,19 @@ const VoterForm = ({ voters, setVoters, editingVoter, setEditingVoter }) => {
 
   const [formData, setFormData] = useState({ name: '', email: '', address: '', dob: '' });
 
+  const formatDate = (dateString) => {
+    if (!dateString) return '';
+    const date = new Date(dateString);
+    return date.toISOString().split('T')[0];
+  };
+
   useEffect(() => {
     if (editingVoter) {
       setFormData({
         name: editingVoter.name || '',
         email: editingVoter.email || '',
         address: editingVoter.address || '',
-        dob: editingVoter.dob || '',
+        dob: formatDate(editingVoter.dob),
       });
     } else {
       setFormData({ name: '', email: '', address: '', dob: '' });
@@ -88,7 +94,6 @@ const VoterForm = ({ voters, setVoters, editingVoter, setEditingVoter }) => {
 
       <button type="submit" className="w-full bg-[#1C352D] text-white p-2 rounded">
         {editingVoter ? 'Update Voter' : 'Add New Voter'}
-
       </button>
     </form>
   );
