@@ -13,7 +13,7 @@ app.use(express.json());
 
 // Routes
 app.use('/api/auth', require('./routes/authRoutes'));
-app.use('/api/voters', require('./routes/voterRoutes')); // <- add this if missing
+app.use('/api/voters', require('./routes/voterRoutes'));
 
 // Connect DB & start server if run directly
 if (require.main === module) {
